@@ -22,8 +22,12 @@ public class GenericsExempleList {
 
 		// Iterando sobre a lista sem Generics (necessário fazer cast)
 		for (Object elemento : listaSemGenerics) {
-			String str = (String) elemento;
-			System.out.println(str);
+			if (elemento instanceof String) {
+                String str = (String) elemento;
+                System.out.println(str);
+            } else {
+                System.out.println("Elemento não é uma String: " + elemento);
+            }
 		}
 	}
 }
